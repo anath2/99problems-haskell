@@ -1,4 +1,3 @@
 # 99problems-haskell
 
-Solutions to 99 problems in haskell
-The solutions would be updated from time to time
+My solutions to 99 questions in haskell. This project is still work in progress. I would be refactoring and revising my solutions from time to time
