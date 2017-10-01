@@ -19,6 +19,3 @@ runLengthEncodePlus xs =
         where runLengthEncodePlus list
                 | length list == 1 = Elem (head list)
                 | otherwise = Tuple (length list, head list)        
-
--- Run length encode a single item is the same as 
--- Encoding a list using regular run length encoding
