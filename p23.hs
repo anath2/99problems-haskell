@@ -10,4 +10,3 @@ getRandnElements xs n
     | otherwise = do pos <- replicateM n $ getStdRandom $ randomR (0, (length xs) -1)
                      return [xs !! p | p <- pos]
     
--- TODO Select elements without repeating
