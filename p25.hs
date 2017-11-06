@@ -1,14 +1,12 @@
--- Algorithm
-
--- Take a random pair of elements and replace them in place
--- Take the sublist removing those two elements and do the same
-
--- Generate a random permutation of an array
+-- Generate random permutations of a list
 import System.Random
+import Control.Monad (replicateM)
 
--- replace elements function
-replaceElem :: Int -> Int -> [a] -> [a]
-replaceElem p q xs = take p interim ++ [ interim !! q ] ++ drop (p + 1) interim 
-    where
-        interim = take q xs ++ [xs !! p] ++ drop (q + 1) xs
---[WIP]
+rnd_select xs n 
+    | n < 0     = error "N must be greater than zero."
+    | otherwise = replicateM n rand
+        where rand = do r <- randomRIO (0, (length xs) - 1)
+                        return (xs!!r)
+
+
+        
