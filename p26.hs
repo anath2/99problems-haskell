@@ -1,22 +1,10 @@
--- Generate combination K different objects chosen from a list of N elements
+-- Generate combination K different elements chosen from a list of N elements
+import Data.List
 
--- ALGO
-    -- SELECT K DISTINCT ELEMENTS FROM A LIST
-    -- Generate combinations of those K elements
-
-import System.Random
-import Control.Monad (replicateM)
-
-rndSelect :: [a] -> Int -> IO [a]
-rndSelect [] _ = return []
-rndSelect _ 0 = return []
-rndSelect xs n = do 
-                ind <- randomRIO (0, (length xs) - 1)
-                let remaining = take ind xs ++ drop (ind + 1) xs                         
-                rest <- rndSelect remaining (n - 1) 
-                return ((xs!!ind) : rest)
-
---[WIP]
-
--- generateCombinations :: Int -> [a] -> IO [[a]]
--- generateCombinations _ [] = return [[]]
+getCombos :: Int -> [a] -> [[a]]
+getCombos 0 ls = [[]]
+getCombos k ls = 
+    do
+        (x:xs) <- tails ls
+        rest <- getCombos (k - 1) xs
+        return $ x:rest
