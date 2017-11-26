@@ -1,4 +1,5 @@
 -- Get a list prime factors for a number
+primeFactors :: Int -> [Int]
 
 primeFactors n = primeFactors' n 2
   where
