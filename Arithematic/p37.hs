@@ -14,8 +14,6 @@ primeFactors' n = encode $ helper n 2
                     | x == num = (num, count + 1):ys
                     | otherwise = (x, 1):y:ys
 
-eulerTotient' :: [(Int, Int)] -> Int
-
-eulerTotient' (x@(a, b):xs) = foldl  helper 1 (x@(a, b):xs)
-                where 
-                    helper (num, mul) b = ((num - 1) * num ** (mul - 1)) * b
+eulerTotient' :: Int -> Int
+                    
+eulerTotient' m = product [(p - 1) * p ^ (c - 1) | (p, c) <- primeFactors' m]
