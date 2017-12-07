@@ -1,0 +1,1 @@
+-- Define predicate that prints the table
