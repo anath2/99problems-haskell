@@ -1,6 +1,6 @@
 -- Count the number of leaves in a binary search tree
 
-data Tree a = Empty | Branch a (Tree a) (Tree a)
+data Tree a = Empty | Branch a (Tree a) (Tree a) deriving (Eq, Show)
 
 countLeaves :: (Tree a) -> Int
 
