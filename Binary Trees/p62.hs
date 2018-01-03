@@ -1,0 +1,1 @@
+-- Collect leaves of a binary tree in a list
