@@ -1,8 +1,7 @@
--- Collect leaves of a binary tree in a list
-data Tree a =  Empty | Branch a (Tree a) (Tree a) 
-    deriving (Eq, Show)
-leaves :: Tree a -> [a]
-leaves  Empty                 = []
-leaves (Branch a Empty Empty) = [a]
-leaves (Branch a left right) = leaves left ++ leaves right
+--Insert all the internal nodes of a tree into a list
+data Tree a = Empty | Branch a (Tree a) (Tree a) deriving (Eq, Show)
+internalNodes :: (Tree a) -> [a]
 
+internalNodes Empty = []
+internalNodes (Branch x Empty Empty) = []
+internalNodes (Branch x l r) = x : internalNodes l ++ internalNodes r
