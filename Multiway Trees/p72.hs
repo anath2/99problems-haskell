@@ -1,4 +1,5 @@
 -- Construct a bottom up order of tree notes
 data Tree a = Node a [Tree a]
 
-bottomUpTree :: Tree a -> String
+bottomUpTree :: Tree a -> [a]
+bottomUpTree (Node x ts) = (bottomUpTree ts) ++ [a]
