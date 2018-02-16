@@ -14,3 +14,5 @@ graphToAdj (Graph (x:xs) ys) = Adj ((x, ys >>= f) : zs)
             | b == x = [a]
             | otherwise = []
         Adj zs = graphToAdj (Graph xs ys)
+
+iso :: (Ord a, Enum a, Ord b, Enum b) => Graph a -> Graph b -> Bool
