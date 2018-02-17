@@ -16,3 +16,8 @@ graphToAdj (Graph (x:xs) ys) = Adj ((x, ys >>= f) : zs)
         Adj zs = graphToAdj (Graph xs ys)
 
 iso :: (Ord a, Enum a, Ord b, Enum b) => Graph a -> Graph b -> Bool
+iso g@(Graph xs ys) h@(Graph xs' ys') = length xs == length xs' &&
+                                        length ys == length ys' &&
+                                        canon g == canon h
+
+canon :: (Ord a, Enum a) => Graph a -> String
