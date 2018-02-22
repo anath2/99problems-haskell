@@ -19,3 +19,7 @@ kcolor g = kcolor' x [] 1
         color ((v, e):xs) ys n = if any (\x -> (x, n) `elem` ys) e
                                 then color xs ys n
                                 else color xs ((v, n) : ys) n
+
+-- determines chromatic number, given graph coloration
+chromatic :: [(a, Int)] -> Int
+chromatic x = length $ foldr (\(a, n) xs -> if n `elem` xs then xs else n : xs) [] x
