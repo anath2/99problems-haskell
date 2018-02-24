@@ -1,3 +1,5 @@
 -- Depth first traversval of a graph
 
-data Graph a = Graph [a] [(a, a)]
+type Node = Int
+type Edge = (Node, Node)
+type Graph = ([Node], [Edge])
