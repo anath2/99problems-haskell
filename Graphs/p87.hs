@@ -3,3 +3,5 @@
 type Node = Int
 type Edge = (Node, Node)
 type Graph = ([Node], [Edge])
+
+depthFirst :: Graph -> Node -> [Node]
