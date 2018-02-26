@@ -18,4 +18,13 @@ dfrecursive (v, e) (top:stack)
     where
         newv = [x | x <- v, x /= top]
         adjacent = [x | (x,y) <- e, y == top] ++ [x | (y,x) <- e, y == top]
+
+connectedcomponents :: Graph -> [[Node]]
+connectedcomponents ([],_) = []
+connectedcomponents (top:v,e) 
+    | remaining == [] = [connected]
+    | otherwise = connected : connectedcomponents (remaining, e)
+    where
+        connected = depthfirst (top:v,e) top
+        remaining = (top:v) \\ connected
         
