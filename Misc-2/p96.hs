@@ -5,3 +5,9 @@
 import Data.Char
 syntaxCheck :: String -> Bool
 syntaxCheck []      = False
+
+syntax_check (x:xs) = isLetter x && loop xs
+    where loop [] = True
+          loop (y:ys) | y == '-'     = (not . null) ys && isAlphaNum (head ys) && loop (tail ys) 
+                      | isAlphaNum y = loop ys
+                      | otherwise    = False
