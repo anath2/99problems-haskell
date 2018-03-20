@@ -1,3 +1,5 @@
 # 99problems-haskell
 
-My solutions to 99 questions in haskell. This project is still work in progress. I would be refactoring and revising my solutions from time to time
+Solutions to 99 questions in haskell. 
+Complete list of problems can be found at:
+https://wiki.haskell.org/H-99:_Ninety-Nine_Haskell_Problems
